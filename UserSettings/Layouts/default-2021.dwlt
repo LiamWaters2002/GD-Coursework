@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 1504
+  controlID: 44
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 1505
+  controlID: 45
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 1506
+  controlID: 46
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 1507
+  controlID: 47
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -430,23 +430,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: aea95300
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 5cfcb7ffd003b8ff1e04b8ff5c06b8ff2cfcb9ff4afcb9fff6f3bbff70e8bdffcae5bfff74e7bfffc4e7bfffe2e7bfffb2ddc1ffc2ddc1fff4e9c3ff54dec5ffc8d2c7ffa2cecfffa0cfcfff6ec5d1fff4c6d1ff42c7d1ff60c7d1ff30bdd3ff40bdd3ff94ceddff92e6ddff90e7ddff5edddfff90dde5ff42d8e7ff90d8e7ffaed8e7ff7ecee9ff8ecee9ff26c8ebffbac6edff68beefffb4beeffff0c0efffc8b6f1ffd8b6f1ffbcb7f1ffb8bef3ff64b6f5ff24aef7ffe2aaf9ff0eacf9ff0ab7f9ff5ab7f9ff5cb7f9ff72b0fbff82b0fbff5eb3fbffacb3fbffe6b5fbfffeaefdff28affdff2cfbffff26d95c00f2e15d002edb790076a08a00
+      m_ExpandedIDs: 8001feffcc01feff0a04feffe2f9fffff4f9ffff2afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Creature_01
-        m_OriginalName: Creature_01
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -4007862
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -732,7 +732,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.23333041, y: 0.00027051684, z: -0.000066477514, w: -0.9724002}
     speed: 2
-    m_Value: {x: -0.2333298, y: 0.00027051615, z: -0.00006647734, w: -0.9723976}
+    m_Value: {x: -0.23333041, y: 0.00027051682, z: -0.000066477514, w: -0.9724002}
   m_Size:
     m_Target: 3.0440078
     speed: 2
@@ -925,36 +925,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Audio
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Audio
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: H:\GD-Coursework
+  m_LastProjectPath: C:\Users\LiamW\Documents\GitHub\GDCoursework
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 120}
-    m_SelectedIDs: 8eef0200
-    m_LastClickedID: 192398
-    m_ExpandedIDs: 0000000020ed020022ed020024ed020026ed020028ed02002aed02002ced02002eed020030ed020032ed020034ed020088ef020000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 2a5b0000
+    m_LastClickedID: 23338
+    m_ExpandedIDs: 000000000c5b00000e5b0000105b0000125b0000145b0000165b0000185b00001a5b00001c5b00001e5b0000205b0000225b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Zombie
-      m_OriginalName: Zombie
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 773076
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -968,7 +968,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000020ed020022ed020024ed020026ed020028ed02002aed02002ced02002eed020030ed020032ed020034ed020000ca9a3b
+    m_ExpandedIDs: 000000000c5b00000e5b0000105b0000125b0000145b0000165b0000185b00001a5b00001c5b00001e5b0000205b0000225b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -995,7 +995,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000e68c1400dec0ba00
     m_RenameOverlay:
       m_UserAcceptedRename: 0

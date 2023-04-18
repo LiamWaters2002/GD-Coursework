@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{7662FE65-10B1-FECA-9E4C-1BF10D532712}</ProjectGuid>
+    <ProjectGuid>{E80ECFCF-3088-D057-BD98-F80BEE09FD4D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>PhotonChat</AssemblyName>
@@ -657,7 +657,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{897C53F3-FD96-69D5-8EF2-E0C164C5648F}</Project>
+      <Project>{3CF06CD7-0737-69F1-E060-83B048016E00}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
   </ItemGroup>

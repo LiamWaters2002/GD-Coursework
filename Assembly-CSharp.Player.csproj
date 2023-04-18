@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{FD85179C-2FA9-A4BA-459D-54660E81CF42}</ProjectGuid>
+    <ProjectGuid>{5FD9888D-5E33-1952-3FD5-0B0768D2EBCC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -706,47 +706,47 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="PhotonUnityNetworking.Player.csproj">
-      <Project>{770E3B51-815A-DE5E-2B4C-4186D419E441}</Project>
+      <Project>{8ECF524A-5E70-B827-FFAA-CB91A89EDF3B}</Project>
       <Name>PhotonUnityNetworking.Player</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonChat.Player.csproj">
-      <Project>{7662FE65-10B1-FECA-9E4C-1BF10D532712}</Project>
+      <Project>{E80ECFCF-3088-D057-BD98-F80BEE09FD4D}</Project>
       <Name>PhotonChat.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.Player.csproj">
-      <Project>{9CF7F08E-8466-93AD-0AC7-B6BE3A028C77}</Project>
+      <Project>{8F3EC535-AAB1-C96A-EE3F-8A77DB802BC7}</Project>
       <Name>Unity.Timeline.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
-      <Project>{5A4BC3E0-C5A1-7733-17AC-910F98500A4E}</Project>
+      <Project>{A42C3617-A7E7-4603-A5B8-A0821741E453}</Project>
       <Name>Unity.TextMeshPro.Player</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Demos.Player.csproj">
-      <Project>{99B42CC7-BCA4-1479-7DC3-87284C12A7BD}</Project>
+      <Project>{2C1DE4FF-5DC8-C0A4-31C4-211F04759A11}</Project>
       <Name>PhotonUnityNetworking.Demos.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.Player.csproj">
-      <Project>{F7C75A5C-BB4F-6735-3863-668B1499CE9B}</Project>
+      <Project>{8A2E1FF3-1DDC-F39C-52AE-FDEF458A7354}</Project>
       <Name>Unity.VisualScripting.Flow.Player</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonRealtime.Player.csproj">
-      <Project>{067D2095-5528-E4D7-F525-AC0F61CB5320}</Project>
+      <Project>{10E9B448-2CC5-3579-0FA0-A01452B9388D}</Project>
       <Name>PhotonRealtime.Player</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.Player.csproj">
-      <Project>{DFAC8D85-8693-F95C-A256-42204A508FDE}</Project>
+      <Project>{455628FA-493B-2C74-A167-C872EB6DFA02}</Project>
       <Name>PhotonUnityNetworking.Utilities.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{897C53F3-FD96-69D5-8EF2-E0C164C5648F}</Project>
+      <Project>{3CF06CD7-0737-69F1-E060-83B048016E00}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
-      <Project>{53FBD3F9-2230-3174-79B9-FDFA448C8F61}</Project>
+      <Project>{8F9B013C-1F5A-3CBF-087F-A118FF02572B}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
-      <Project>{6D8E4572-D8CA-8727-EEAC-F080021CF705}</Project>
+      <Project>{42335670-4083-9D4B-C613-DEE366A12FBC}</Project>
       <Name>Unity.VisualScripting.Core.Player</Name>
     </ProjectReference>
   </ItemGroup>

@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8185BC95-DF16-DF8C-A448-190045CD08DE}</ProjectGuid>
+    <ProjectGuid>{BCDC2B4B-43D9-D40D-D1AB-C9FD00CB0FEF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>PhotonRealtime</AssemblyName>
@@ -747,11 +747,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{3920F877-7A9C-2729-DB1B-1E585B10F23B}</Project>
+      <Project>{4884DAAE-CEC7-2643-EA78-3A07C03BFEC6}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{82AFF558-C5C4-5757-76C7-CFBD17F1646F}</Project>
+      <Project>{048B317C-5800-9A03-F1CA-BCBA86D92F8B}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
   </ItemGroup>

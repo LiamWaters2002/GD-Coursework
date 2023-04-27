@@ -29,6 +29,14 @@ public class Room : MonoBehaviourPunCallbacks
             int playerCount = PhotonNetwork.CurrentRoom.PlayerCount; 
             playerCountText.text = playerCount.ToString() + "/6";
         }
+
+
+            foreach (Player player in PhotonNetwork.PlayerList)
+            {
+                string nicknameText = player.NickName + "\n";
+                Debug.Log(nicknameText);
+            }
+        
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -50,7 +58,7 @@ public class Room : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.IsMasterClient)
         { 
-            //PhotonNetwork.AutomaticallySyncScene = true;
+            PhotonNetwork.AutomaticallySyncScene = true;
             PhotonNetwork.LoadLevel("Prison");
             //SceneManager.UnloadSceneAsync("Rooom");
             //photonView.RPC("SetLoadingText", RpcTarget.All);

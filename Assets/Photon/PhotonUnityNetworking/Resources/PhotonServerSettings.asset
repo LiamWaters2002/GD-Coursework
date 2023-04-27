@@ -49,6 +49,11 @@ MonoBehaviour:
   - RPCSetMonsterIndex
   - RPCSpawnPlayers
   - <RPCSpawnPlayers>g__RPCFindPhotonView|10_0
+  - SetHealth
+  - UpdateHealth
+  - UpdateFillAmount
+  - SyncDoorState
+  - SetPlayerName
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

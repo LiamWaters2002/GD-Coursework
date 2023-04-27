@@ -6,29 +6,28 @@ using System.Linq;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerSpawn : MonoBehaviourPunCallbacks
 {
     public GameObject[] prisonerSpawnPoints;
-    public GameObject[] monsterSpawnPoint;
     public GameObject playerPrefab;
-    public GameObject monsterPrefab;
     public GameObject cameraPrefab;
     public Vector3 cameraOffset;
 
-    private int monsterIndex;
+    public Text score;
+
     private int localPlayerIndex;
 
     private void Start()
     {
-        Vector3 cameraOffset = new Vector3(0, 0.7f, 0.5f);
+        cameraOffset = new Vector3(0, 0.3f, 0.1f);
+        Debug.Log("playerspawn");
 
         if (PhotonNetwork.IsConnected)
         {
             if (PhotonNetwork.IsMasterClient)
             {
-                monsterIndex = Random.Range(0, PhotonNetwork.CurrentRoom.PlayerCount);
-                photonView.RPC("RPCSetMonsterIndex", RpcTarget.MasterClient, monsterIndex);
                 photonView.RPC("RPCSpawnPlayers", RpcTarget.MasterClient);
                 photonView.RPC("RPCFindPhotonView", RpcTarget.AllBuffered);
             }
@@ -47,8 +46,16 @@ public class PlayerSpawn : MonoBehaviourPunCallbacks
 
     private void Update()
     {
+
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+
+            int intScore = int.Parse(score.text);
+            ScoreController scoreController = ScoreController.Instance;
+            scoreController.SetHighScore(intScore);
+            scoreController.GetHighScore();
+
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             PhotonNetwork.LeaveRoom();
@@ -56,12 +63,6 @@ public class PlayerSpawn : MonoBehaviourPunCallbacks
         }
     }
 
-    [PunRPC]
-    void RPCSetMonsterIndex(int index)
-    {
-        monsterIndex = index;
-        Debug.Log("This runs twice");
-    }
 
     [PunRPC]
     void RPCSpawnPlayers()
@@ -70,22 +71,11 @@ public class PlayerSpawn : MonoBehaviourPunCallbacks
 
         for (int i = 0; i < PhotonNetwork.CurrentRoom.PlayerCount; i++)
         {
-            if (i == monsterIndex)
-            {
-                Vector3 spawnPosition = monsterSpawnPoint[0].transform.position; //May add more positions...
-                GameObject monster = PhotonNetwork.Instantiate(monsterPrefab.name, spawnPosition, Quaternion.identity);
+            Vector3 spawnPosition = prisonerSpawnPoints[i].transform.position;
+            GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, spawnPosition, Quaternion.identity);
 
-                PhotonView photonView = monster.GetComponent<PhotonView>();
-                photonView.TransferOwnership(i + 1);
-            }
-            else
-            {
-                Vector3 spawnPosition = prisonerSpawnPoints[i].transform.position;
-                GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, spawnPosition, Quaternion.identity);
-
-                PhotonView photonView = player.GetComponent<PhotonView>();
-                photonView.TransferOwnership(i + 1);
-            }
+            PhotonView photonView = player.GetComponent<PhotonView>();
+            photonView.TransferOwnership(i + 1);
         }
     }
 
@@ -94,13 +84,7 @@ public class PlayerSpawn : MonoBehaviourPunCallbacks
     {
         // Get all GameObjects with "Player" tag
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        GameObject monster = GameObject.FindGameObjectWithTag("Monster");
 
-        if (monster.GetPhotonView().IsMine)
-        {
-            GameObject camera = Instantiate(cameraPrefab, monster.transform.position + cameraOffset, Quaternion.identity);
-            camera.transform.SetParent(monster.transform);
-        }
         // Loop through each GameObject
         foreach (GameObject player in players)
         {
@@ -108,6 +92,9 @@ public class PlayerSpawn : MonoBehaviourPunCallbacks
             {
                 GameObject camera = Instantiate(cameraPrefab, player.transform.position + cameraOffset, Quaternion.identity);
                 camera.transform.SetParent(player.transform);
+                camera.transform.position = camera.transform.position + cameraOffset;
+                player.transform.Find("Canvas").GetComponent<Canvas>().enabled = false;
+
             }
         }
     }

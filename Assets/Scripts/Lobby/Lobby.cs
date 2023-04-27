@@ -20,30 +20,29 @@ public class Lobby : MonoBehaviourPunCallbacks
     {
         // Create a new room: Room name = playerName.
         RoomOptions options = new RoomOptions();
-        options.MaxPlayers = 4;
+        options.MaxPlayers = 6;
         PhotonNetwork.CreateRoom(txtRoomName.text, options);
-    }
-
-    public void JoinRandomRoom()
-    {
-        PhotonNetwork.JoinRandomRoom();
     }
 
     public override void OnConnectedToMaster()
     {
         PhotonNetwork.JoinLobby();
-        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     public void ConnectToRoom()
     {
+        PhotonNetwork.NickName = txtPlayerName.text;
+
         PhotonNetwork.JoinRoom(txtRoomName.text);
     }
 
     public override void OnJoinedRoom()
     {
-        // Load the game scene when the player successfully joins the room
         PhotonNetwork.NickName = txtPlayerName.text;
-        PhotonNetwork.LoadLevel("Room");
+        // Load the game scene when the player successfully joins the room
+        if (PhotonNetwork.NickName != "")
+        {
+            PhotonNetwork.LoadLevel("Room");
+        }
     }
 }

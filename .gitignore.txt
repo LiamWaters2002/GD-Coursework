@@ -1,0 +1,2 @@
+# ignore a directory and all its contents
+Library/

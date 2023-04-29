@@ -1,13 +1,19 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - AgentController
     - AnimationController
+    - DisplayHighScore
     - DoorController
     - FirstPersonController
+    - HealthBar
     - Lobby
+    - PlayerHealth
+    - PlayerLabel
     - PlayerSpawn
     - Room
+    - ScoreController
+    - SpawnZombies
+    - ZombieController
     PhotonUnityNetworking.Demos.dll:
     - Photon.Pun.Demo.Asteroids.Asteroid
     - Photon.Pun.Demo.Asteroids.Bullet
@@ -38,8 +44,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -113,7 +121,16 @@ ScriptsOnlyBuild:
     methodName: StartGame
   - assembly: Assembly-CSharp
     fullTypeName: Room
+    methodName: StartGame
+  - assembly: Assembly-CSharp
+    fullTypeName: Room
     methodName: LeaveRoom
+  - assembly: Assembly-CSharp
+    fullTypeName: Room
+    methodName: StartGame
+  - assembly: Assembly-CSharp
+    fullTypeName: Room
+    methodName: StartGame
   sceneClasses:
     Assets/Scenes/Lobby.unity:
     - Class: 1
@@ -161,69 +178,79 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1606}
     - Class: 114
-      Script: {instanceID: 1734}
+      Script: {instanceID: 1698}
     - Class: 114
-      Script: {instanceID: 1816}
+      Script: {instanceID: 1780}
     - Class: 114
-      Script: {instanceID: 1882}
+      Script: {instanceID: 1846}
     - Class: 114
-      Script: {instanceID: 2274}
+      Script: {instanceID: 2154}
     - Class: 114
-      Script: {instanceID: 2702}
+      Script: {instanceID: 2240}
     - Class: 114
-      Script: {instanceID: 2904}
+      Script: {instanceID: 2440}
     - Class: 114
-      Script: {instanceID: 3104}
+      Script: {instanceID: 2670}
     - Class: 114
-      Script: {instanceID: 3192}
+      Script: {instanceID: 2872}
     - Class: 114
-      Script: {instanceID: 3912}
+      Script: {instanceID: 3072}
     - Class: 114
-      Script: {instanceID: 3914}
+      Script: {instanceID: 3160}
     - Class: 114
-      Script: {instanceID: 4066}
+      Script: {instanceID: 3822}
     - Class: 114
-      Script: {instanceID: 4180}
+      Script: {instanceID: 3878}
     - Class: 114
-      Script: {instanceID: 4196}
+      Script: {instanceID: 3880}
     - Class: 114
-      Script: {instanceID: 4444}
+      Script: {instanceID: 4032}
     - Class: 114
-      Script: {instanceID: 4852}
+      Script: {instanceID: 4146}
     - Class: 114
-      Script: {instanceID: 4960}
+      Script: {instanceID: 4162}
     - Class: 114
-      Script: {instanceID: 5064}
+      Script: {instanceID: 4410}
     - Class: 114
-      Script: {instanceID: 5086}
+      Script: {instanceID: 4816}
     - Class: 114
-      Script: {instanceID: 5140}
+      Script: {instanceID: 4924}
     - Class: 114
-      Script: {instanceID: 5340}
+      Script: {instanceID: 5028}
     - Class: 114
-      Script: {instanceID: 5472}
+      Script: {instanceID: 5050}
     - Class: 114
-      Script: {instanceID: 5516}
+      Script: {instanceID: 5102}
     - Class: 114
-      Script: {instanceID: 5694}
+      Script: {instanceID: 5304}
     - Class: 114
-      Script: {instanceID: 5840}
+      Script: {instanceID: 5436}
     - Class: 114
-      Script: {instanceID: 6142}
+      Script: {instanceID: 5476}
     - Class: 114
-      Script: {instanceID: 6150}
+      Script: {instanceID: 5482}
     - Class: 114
-      Script: {instanceID: 6722}
+      Script: {instanceID: 5660}
     - Class: 114
-      Script: {instanceID: 7226}
+      Script: {instanceID: 5806}
     - Class: 114
-      Script: {instanceID: 7456}
+      Script: {instanceID: 6106}
     - Class: 114
-      Script: {instanceID: 7574}
+      Script: {instanceID: 6114}
     - Class: 114
-      Script: {instanceID: 7690}
+      Script: {instanceID: 6686}
     - Class: 114
-      Script: {instanceID: 7970}
+      Script: {instanceID: 6792}
+    - Class: 114
+      Script: {instanceID: 7188}
+    - Class: 114
+      Script: {instanceID: 7418}
+    - Class: 114
+      Script: {instanceID: 7532}
+    - Class: 114
+      Script: {instanceID: 7648}
+    - Class: 114
+      Script: {instanceID: 7928}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -283,8 +310,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 90
@@ -298,26 +323,44 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2702}
+      Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 2792}
+      Script: {instanceID: 1606}
     - Class: 114
-      Script: {instanceID: 2904}
+      Script: {instanceID: 2440}
     - Class: 114
-      Script: {instanceID: 3104}
+      Script: {instanceID: 2670}
     - Class: 114
-      Script: {instanceID: 5340}
+      Script: {instanceID: 2760}
     - Class: 114
-      Script: {instanceID: 5454}
+      Script: {instanceID: 2872}
+    - Class: 114
+      Script: {instanceID: 3072}
+    - Class: 114
+      Script: {instanceID: 3822}
+    - Class: 114
+      Script: {instanceID: 3876}
+    - Class: 114
+      Script: {instanceID: 5304}
+    - Class: 114
+      Script: {instanceID: 5418}
+    - Class: 114
+      Script: {instanceID: 5440}
     - Class: 114
       Script: {instanceID: 5476}
     - Class: 114
-      Script: {instanceID: 5694}
+      Script: {instanceID: 5660}
     - Class: 114
-      Script: {instanceID: 6142}
+      Script: {instanceID: 6106}
     - Class: 114
-      Script: {instanceID: 7456}
+      Script: {instanceID: 6792}
+    - Class: 114
+      Script: {instanceID: 7418}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 137
       Script: {instanceID: 0}
@@ -337,9 +380,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 205
       Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
     - Class: 215
       Script: {instanceID: 0}
     - Class: 218
+      Script: {instanceID: 0}
+    - Class: 222
       Script: {instanceID: 0}
     - Class: 223
       Script: {instanceID: 0}
@@ -381,19 +428,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1606}
     - Class: 114
-      Script: {instanceID: 2702}
+      Script: {instanceID: 2670}
     - Class: 114
-      Script: {instanceID: 2904}
+      Script: {instanceID: 2872}
     - Class: 114
-      Script: {instanceID: 3104}
+      Script: {instanceID: 3072}
     - Class: 114
-      Script: {instanceID: 3192}
+      Script: {instanceID: 3160}
     - Class: 114
-      Script: {instanceID: 5694}
+      Script: {instanceID: 5660}
     - Class: 114
-      Script: {instanceID: 6142}
+      Script: {instanceID: 6106}
     - Class: 114
-      Script: {instanceID: 6256}
+      Script: {instanceID: 6220}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -563,6 +610,12 @@ ScriptsOnlyBuild:
     className: RoomListCell
   - hash:
       serializedVersion: 2
+      Hash: 0fb2b962a48d2f6039fa9915b7639cc3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DisplayHighScore
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -627,6 +680,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
     className: CurrentRoomIsOpenToggle
+  - hash:
+      serializedVersion: 2
+      Hash: c77e6cdf1740f96a12391ae41b0a791b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerLabel
   - hash:
       serializedVersion: 2
       Hash: d329540117e6b6c523bded68046af505
@@ -875,12 +934,6 @@ ScriptsOnlyBuild:
     className: BezierCurve
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GlobalSmoothRotation
-  - hash:
-      serializedVersion: 2
       Hash: c656dcc13ae391b68d594cc8f9c590b0
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
@@ -995,6 +1048,12 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
+      Hash: a0f7b7fb8236bc1d942369b10e8e773a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerHealth
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -1005,6 +1064,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
     className: GraphicToggleIsOnTransition
+  - hash:
+      serializedVersion: 2
+      Hash: 57335faf5d4238c3f70ce2e019f69498
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpawnZombies
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1187,12 +1252,6 @@ ScriptsOnlyBuild:
     className: ToggleExpand
   - hash:
       serializedVersion: 2
-      Hash: b2627aef6b48cee10aeb5c9bfe53ca8f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: AutoLODProperties
-  - hash:
-      serializedVersion: 2
       Hash: d2a2698b314a20912af1eb2b1758dc90
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
@@ -1271,7 +1330,7 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 31ce7eaedc3806aeb4eaf82ee9966e03
+      Hash: 48948180e126df8b927d0b3a5483bec9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Lobby
@@ -1433,6 +1492,12 @@ ScriptsOnlyBuild:
     className: IngameControlPanel
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StartGameSingleplayer
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1457,7 +1522,7 @@ ScriptsOnlyBuild:
     className: CurrentRoomAutoCleanupProperty
   - hash:
       serializedVersion: 2
-      Hash: 78dd2cef69ccecf934edda7d5b14e0b8
+      Hash: ab768710c33355626d97ff8c26592084
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerSpawn
@@ -1475,10 +1540,16 @@ ScriptsOnlyBuild:
     className: PlayerControl
   - hash:
       serializedVersion: 2
-      Hash: 93d07c75489ea2ea837eb77021d221ca
+      Hash: c12d55be236eea90100f46bebac59a56
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: AgentController
+    className: ZombieController
+  - hash:
+      serializedVersion: 2
+      Hash: d98414f6f1b601ac7df5dcc684d84452
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HealthBar
   - hash:
       serializedVersion: 2
       Hash: 37b66d97ccef5607e80037acafe51b3b
@@ -1787,6 +1858,12 @@ ScriptsOnlyBuild:
     className: ToDemoHubButton
   - hash:
       serializedVersion: 2
+      Hash: da5da63b5b61dcd1b288db8ee0e124bd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScoreController
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -1967,7 +2044,7 @@ ScriptsOnlyBuild:
     className: UnityOnParticleCollisionMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 909f9d7c8965600003accdbbfceb1b40
+      Hash: 2dfac8bb6b1e768d02999e6ed8e1b505
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FirstPersonController

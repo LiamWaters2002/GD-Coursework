@@ -27,7 +27,6 @@ public class PlayerLabel : MonoBehaviourPun
         foreach (Player player in PhotonNetwork.PlayerList)
         {
             string nicknameText = player.NickName + "\n";
-            Debug.Log(nicknameText);
         }
     }
 

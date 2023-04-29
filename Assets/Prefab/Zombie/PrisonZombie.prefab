@@ -2138,9 +2138,10 @@ GameObject:
   - component: {fileID: 95730979721596000}
   - component: {fileID: 325735052}
   - component: {fileID: 325735053}
+  - component: {fileID: 1845369334}
   m_Layer: 0
   m_Name: PrisonZombie
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2188,7 +2189,7 @@ Animator:
   m_GameObject: {fileID: 1534214397091290}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: dc7b2d5c7f783964bb7e48641b72eaa0, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e37b81504bcd4b49b144686bd006266, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2213,6 +2214,10 @@ MonoBehaviour:
   prisoners: []
   targetPrisoner: {fileID: 0}
   speed: 5
+  zombieHealth: 0
+  attackDistance: 1.5
+  attackDelay: 1
+  attackDamage: 10
   agent: {fileID: 325735053}
 --- !u!195 &325735053
 NavMeshAgent:
@@ -2236,6 +2241,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &1845369334
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534214397091290}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1.7
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1543721702678064
 GameObject:
   m_ObjectHideFlags: 0

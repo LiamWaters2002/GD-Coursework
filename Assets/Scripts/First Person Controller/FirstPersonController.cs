@@ -18,16 +18,13 @@ public class FirstPersonController : MonoBehaviourPunCallbacks, IPunObservable
     public float jumpSpeed = 5;
 
     public KeyCode flashlightKey = KeyCode.F;
-    public float batteryLife = 100f;//initial battery life of  flashlight
-    public float batteryDrainPerSecond = 2f;//battery drains per second
 
-    public Light flashlightLight; // The Light component of the flashlight
-    private float currentAngle = 0f; // The current angle of the flashlight
-    public float maxAngle = 45f; // The maximum angle the flashlight can move up and down
-    public Transform playerTransform; // The Transform component of the player
+    public Light flashlightLight;
+    private float currentAngle = 0f;
+    public float maxAngle = 45f; 
+    public Transform playerTransform; 
 
-    private bool flashlightOn = false; // Is the flashlight currently on?
-    private float currentBatteryLife; // The current battery life of the flashlight
+    private bool flashlightOn = false;
 
     private CharacterController characterController;
     private float ySpeed;
@@ -41,6 +38,8 @@ public class FirstPersonController : MonoBehaviourPunCallbacks, IPunObservable
 
     private float lerpSpeed;
 
+    private bool isAttacking;
+
 
 
 
@@ -51,16 +50,14 @@ public class FirstPersonController : MonoBehaviourPunCallbacks, IPunObservable
         characterController = GetComponent<CharacterController>();
         playerTransform = GetComponent<Transform>();
         playerCamera = GetComponentInChildren<Camera>();
-        flashlightLight= GetComponentInChildren<Light>(); // Find the player object and get its Transform component
+        flashlightLight= GetComponentInChildren<Light>();
         originalStepOffset = characterController.stepOffset;
-        currentBatteryLife = batteryLife; // Set the current battery life to the initial battery life
     }
 
     void Update()
     {
         if (photonView.IsMine || !PhotonNetwork.IsConnected)
         {
-            // Determine the movement direction based on which keys the player is holding down
             Vector3 movementDirection = Vector3.zero;
             if (Input.GetKey(KeyCode.W))
             {
@@ -129,18 +126,19 @@ public class FirstPersonController : MonoBehaviourPunCallbacks, IPunObservable
                 // Move the flashlight up and down based on mouse movement
                 float mouseMovement = Input.GetAxis("Mouse Y");
                 currentAngle += mouseMovement;
-                //currentAngle = Mathf.Clamp(currentAngle, -maxAngle, maxAngle);
-                //transform.localEulerAngles = new Vector3(-currentAngle, 0, 0);
-
-            //    currentBatteryLife -= batteryDrainPerSecond * Time.deltaTime; // Drain the battery life
-            //    flashlightLight.intensity = currentBatteryLife / batteryLife; // Adjust the light intensity based on the remaining battery life
             }
 
             if (PhotonNetwork.IsConnected)
             {
                 photonView.RPC("UpdatePlayerPosition", RpcTarget.OthersBuffered, transform.position, transform.rotation);
             }
-            
+
+
+            if (Input.GetMouseButtonDown(0) )
+            {
+                Attack();
+            }
+
         }
         else
         {
@@ -175,5 +173,19 @@ public class FirstPersonController : MonoBehaviourPunCallbacks, IPunObservable
     {
         networkPosition = position;
         networkRotation = rotation;
+    }
+
+    private void Attack()
+    {
+        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        Physics.Raycast(ray, out hit);
+        if (hit.collider.gameObject.CompareTag("Zombie"))
+        {
+            Destroy(hit.collider.gameObject);
+            ScoreController scoreController = ScoreController.Instance;
+            scoreController.incrementScore();
+
+        }
     }
 }

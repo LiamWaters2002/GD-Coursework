@@ -520,8 +520,6 @@ MonoBehaviour:
   rotationSpeed: 5
   jumpSpeed: 5
   flashlightKey: 102
-  batteryLife: 100
-  batteryDrainPerSecond: 2
   flashlightLight: {fileID: 0}
   maxAngle: 45
   playerTransform: {fileID: 0}

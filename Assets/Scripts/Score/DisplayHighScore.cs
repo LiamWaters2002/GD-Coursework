@@ -5,13 +5,23 @@ using UnityEngine.UI;
 
 public class DisplayHighScore : MonoBehaviour
 {
-    Text score;
+    public Text score;
+    ScoreController scoreController;
 
     // Start is called before the first frame update
     void Start()
     {
-        ScoreController scoreController = new ScoreController();
-        score.text = scoreController.GetLatestHighScore().ToString();
+        scoreController = ScoreController.Instance;
+    }
+
+    private void Update()
+    {
+        if (score.text.Equals("0"))
+        {
+            scoreController.GetHighScore();
+            score.text = scoreController.GetLatestHighScore().ToString();
+        }
+
     }
 
 }

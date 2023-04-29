@@ -22,13 +22,11 @@ public class PlayerHealth : MonoBehaviourPunCallbacks
             isHealing = true;
             StartHealing();
         }
-        Debug.Log(currentHealth);
     }
 
 
     public void TakeDamage()
     {
-        Debug.Log("taking damage");
         if (photonView.IsMine)
         {
             currentHealth = currentHealth - 5;

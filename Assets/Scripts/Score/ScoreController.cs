@@ -20,6 +20,14 @@ public class ScoreController : MonoBehaviour
 
     public int latestHighScore;
 
+    public void Update()
+    {
+        //if (score = null)
+        //{
+        //    score = GameObject.Find("Canvas").transform.Find("Panel").transform.Find("TextScore").GetComponent<Text>();
+        //}
+    }
+
     public static ScoreController Instance { get; private set; }
 
     private IEnumerator coroutineSend;
@@ -45,8 +53,6 @@ public class ScoreController : MonoBehaviour
 
     public int GetLatestHighScore()
     {
-        coroutineReceive = GetHighScoreCR();
-        StartCoroutine(coroutineReceive);
         return latestHighScore;
     }
 

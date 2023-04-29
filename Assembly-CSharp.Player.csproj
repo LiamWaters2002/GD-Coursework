@@ -64,9 +64,9 @@
     <Compile Include="Assets\Scripts\Labels\PlayerLabel.cs" />
     <Compile Include="Assets\Scripts\Game\Door\DoorController.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChannelSelector.cs" />
-    <Compile Include="Assets\Scripts\Performance Scripts\DistanceCulling.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
     <Compile Include="Assets\Scripts\Labels\PlayerHealth.cs" />
+    <Compile Include="Assets\Scripts\Game\Zombie\SpawnZombies.cs" />
     <Compile Include="Assets\Scripts\Lobby\Lobby.cs" />
     <Compile Include="Assets\Photon\PhotonLibs\WebSocket\WebSocket.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
@@ -82,13 +82,10 @@
     <Compile Include="Assets\Scripts\Score\ScoreController.cs" />
     <Compile Include="Assets\Stellar Sky\Demo\CameraController.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\FriendItem.cs" />
-    <Compile Include="Assets\Scripts\Performance Scripts\FrustumCullingPlacement.cs" />
-    <Compile Include="Assets\Scripts\Performance Scripts\FrustumCulling.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs" />
     <Compile Include="Assets\Scripts\First Person Controller\FirstPersonController.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
-    <Compile Include="Assets\Scripts\Game\Zombie\SpawnZombies.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

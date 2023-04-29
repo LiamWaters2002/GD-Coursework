@@ -9,6 +9,7 @@ public class Lobby : MonoBehaviourPunCallbacks
 {
     public TMP_Text txtPlayerName;
     public TMP_Text txtRoomName;
+    public ScoreController scoreController;
 
     private void Awake()
     {

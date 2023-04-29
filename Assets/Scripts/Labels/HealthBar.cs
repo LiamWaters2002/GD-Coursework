@@ -28,6 +28,8 @@ public class HealthBar : MonoBehaviourPunCallbacks
     {
         if (photonView.IsMine)
         {
+            //healthBarImage = GetComponent<Image>();
+            //myHealthBar = GameObject.Find("Canvas").transform.GetChild(0).Find("Health").GetComponent<Image>();
             float currentHealth = playerHealth.GetCurrentHealth();
             healthBarImage.fillAmount = currentHealth / fullHealth;
             myHealthBar.fillAmount = currentHealth / fullHealth;
